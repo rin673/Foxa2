@@ -1,18 +1,21 @@
 let currentSlide = 1;
 
+// すべてのスライドを取得
+const slides = document.querySelectorAll('.slide');
+const slideCount = slides.length; // スライドの合計数
+
 function showSlide(index) {
-    const slides = document.querySelectorAll('.slide');
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index - 1].classList.add('active');
+    slides.forEach(slide => slide.classList.remove('active')); // 全スライドを非表示
+    slides[index - 1].classList.add('active'); // 指定したスライドのみ表示
 }
 
 function nextSlide() {
-    currentSlide = (currentSlide % 3) + 1;
+    currentSlide = (currentSlide % slideCount) + 1;
     showSlide(currentSlide);
 }
 
 function prevSlide() {
-    currentSlide = (currentSlide - 2 + 3) % 3 + 1;
+    currentSlide = (currentSlide - 2 + slideCount) % slideCount + 1;
     showSlide(currentSlide);
 }
 
