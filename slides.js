@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 let currentSlide = 1;
 
 // すべてのスライドを取得
